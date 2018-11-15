@@ -12,3 +12,4 @@ out
 *.gpg
 *.class
 demo/src/target/**
+demo/target
