@@ -1,6 +1,8 @@
 package com.kobie.demo;
 
 import com.amazonaws.auth.profile.internal.AwsProfileNameLoader;
+import com.amazonaws.services.sqs.AmazonSQS;
+import com.amazonaws.services.sqs.AmazonSQSClientBuilder;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.util.StringUtils;
 import org.springframework.boot.SpringApplication;
@@ -24,5 +26,10 @@ public class 	DemoApplication {
 	@Bean
 	SubscribableChannel getPublishChannel( ){
 		return null;
+	}
+
+	@Bean
+	AmazonSQS getAmazonSQS(){
+		return AmazonSQSClientBuilder.standard().withRegion("us-east-1").build();
 	}
 }
